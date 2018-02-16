@@ -10,6 +10,9 @@ var pioneerSquare = {
     getRandomInt(minCustomer, maxCustomer) {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
       }
+      getCookiesPerHour: function() {
+        return Math.floor(this.getRandomCustomer() * this.avgCookie);
+    }
 }
 
 
@@ -21,6 +24,9 @@ var portlandAirport = {
     getRandomInt(minCustomer, maxCustomer) {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
       }
+      getCookiesPerHour: function() {
+        return Math.floor(this.getRandomCustomer() * this.avgCookie);
+    }
 }
 
 var washingtonSquare = {
@@ -31,6 +37,9 @@ var washingtonSquare = {
     getRandomInt(minCustomer, maxCustomer) {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
       }
+      getCookiesPerHour: function() {
+        return Math.floor(this.getRandomCustomer() * this.avgCookie);
+    }
 }
 
 var sellwood = {
@@ -41,7 +50,9 @@ var sellwood = {
     getRandomInt(minCustomer, maxCustomer) {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
       }
-    getCookiesPerHour()
+    getCookiesPerHour: function() {
+        return Math.floor(this.getRandomCustomer() * this.avgCookie);
+    }
 }
 
 var pearlDistrict = {
@@ -52,9 +63,9 @@ var pearlDistrict = {
     getRandomInt(minCustomer, maxCustomer) {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
       }
-    // getRandomInt(minCustomer, maxCustomer) => {
-    //     return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
-    // }
+      getCookiesPerHour: function() {
+        return Math.floor(this.getRandomCustomer() * this.avgCookie);
+    }
 }
 
 
