@@ -1,0 +1,32 @@
+table {
+    margin: 0 auto;
+    border: dotted #9881F5;
+}
+
+tr {
+    border: 1 px solid black;
+}
+
+td {
+    padding: 4px 8px;
+    border-bottom: 1 px solid black;
+}
+
+data {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #29264E;
+}
+
+a {
+    color: #82AFF9;
+    text-decoration: none;
+}
+
+p {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    color: #29264E;
+}
+
+body{
+    background-color: salmon;
+}
