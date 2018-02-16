@@ -44,7 +44,10 @@ var portlandAirport = {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
     },
     getCookiesPerHour: function () {
-        return Math.floor(this.getRandomCustomer() * this.avgCookie);
+        for (var i = 0; i < timeOfDay.length; i++)
+        this.cookieResults.push(
+        Math.floor(this.getRandomCustomer() * this.avgCookie)
+        );
     }
 }
 
@@ -57,7 +60,10 @@ var washingtonSquare = {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
     },
     getCookiesPerHour: function () {
-        return Math.floor(this.getRandomCustomer() * this.avgCookie);
+        for (var i = 0; i < timeOfDay.length; i++)
+        this.cookieResults.push(
+        Math.floor(this.getRandomCustomer() * this.avgCookie)
+        );
     }
 }
 
@@ -70,7 +76,10 @@ var sellwood = {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
     },
     getCookiesPerHour: function () {
-        return Math.floor(this.getRandomCustomer() * this.avgCookie);
+        for (var i = 0; i < timeOfDay.length; i++)
+        this.cookieResults.push(
+        Math.floor(this.getRandomCustomer() * this.avgCookie)
+        );
     }
 }
 
@@ -83,7 +92,10 @@ var pearlDistrict = {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
     },
     getCookiesPerHour: function () {
-        return Math.floor(this.getRandomCustomer() * this.avgCookie);
+        for (var i = 0; i < timeOfDay.length; i++)
+        this.cookieResults.push(
+        Math.floor(this.getRandomCustomer() * this.avgCookie)
+        );
     }
 }
 var cookieLocations = [];
@@ -93,12 +105,12 @@ cookieLocations.push({ name: "Washington Square Mall", minCustomer: 11, maxCusto
 cookieLocations.push({ name: "SE Sellwood", minCustomer: 20, maxCustomer: 48, avgCookie: 3.3 });
 cookieLocations.push({ name: "Historic Pearl District", minCustomer: 3, maxCustomer: 24, avgCookie: 2.6 });
 
-cookieHTML = "<tr><th>Pioneer Square Mall</th><th>Minimum Customer / Hour</th><th>Maximum Customer / Hour</th><th>Average Cookies / Customer</th>";
+cookieHTML = "<tr><th>Minimum Customer / Hour</th><th>Maximum Customer / Hour</th><th>Average Cookies / Customer</th>";
 for (var index = 0; index < cookieLocations.length; index++) {
     var currentLocation = cookieLocations[index];
     cookieHTML += "<tr><td>" + currentLocation.minCustomer + "</td><td>" + currentLocation.maxCustomer + "</td><td>" + currentLocation.avgCookie + "</td></tr>";
 }
-document.getElementById("locations").innerHTML = "cookieHTML";
+document.getElementById("locations").innerHTML = cookieHTML;
 
 
 
