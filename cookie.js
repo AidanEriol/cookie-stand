@@ -1,6 +1,10 @@
-// function getRandomInt(min, max) {
-//     return Math.floor(Math.random() * Math.floor(max - min) + min);
-//   }
+var timeOfDay = ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3PM", "4 PM", "5 PM", "6 PM"];
+document.getElementById("times").innerHTML = timeOfDay;
+tOD = timeOfDay.length;
+text = "<ul>";
+for (i = 0; i < tOD; i++) {
+    text += "<li>" + timeOfDay[i] + "</li>";
+}
 
 var pioneerSquare = {
     location: "Pioneer Square",
@@ -9,8 +13,8 @@ var pioneerSquare = {
     avgCookie: 5.2,
     getRandomInt(minCustomer, maxCustomer) {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
-      }
-      getCookiesPerHour: function() {
+      },
+    getCookiesPerHour: function() {
         return Math.floor(this.getRandomCustomer() * this.avgCookie);
     }
 }
@@ -23,7 +27,7 @@ var portlandAirport = {
     avgCookie: 1.2,
     getRandomInt(minCustomer, maxCustomer) {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
-      }
+      },
       getCookiesPerHour: function() {
         return Math.floor(this.getRandomCustomer() * this.avgCookie);
     }
@@ -36,7 +40,7 @@ var washingtonSquare = {
     avg: 1.9,
     getRandomInt(minCustomer, maxCustomer) {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
-      }
+      },
       getCookiesPerHour: function() {
         return Math.floor(this.getRandomCustomer() * this.avgCookie);
     }
@@ -49,7 +53,7 @@ var sellwood = {
     avgCookie: 3.3,
     getRandomInt(minCustomer, maxCustomer) {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
-      }
+      },
     getCookiesPerHour: function() {
         return Math.floor(this.getRandomCustomer() * this.avgCookie);
     }
@@ -62,11 +66,19 @@ var pearlDistrict = {
     avgCookie: 2.6,
     getRandomInt(minCustomer, maxCustomer) {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
-      }
+      },
       getCookiesPerHour: function() {
         return Math.floor(this.getRandomCustomer() * this.avgCookie);
     }
 }
+
+
+
+
+
+
+
+
 
 
 
