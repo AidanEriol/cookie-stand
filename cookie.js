@@ -1,10 +1,5 @@
 var timeOfDay = ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3PM", "4 PM", "5 PM", "6 PM"];
 document.getElementById("times").innerHTML = timeOfDay;
-tOD = timeOfDay.length;
-var text = "<ul>";
-for (i = 0; i < tOD; i++) {
-    text += "<li>" + timeOfDay[i] + "</li>";
-}
 
 // cookieHTML = "<tr><th>Pioneer Square Mall</th><th>Minimum Customer / Hour</th><th>Maximum Customer / Hour</th><th>Average Cookies / Customer</th>";
 // for (var index = 0; index < timeOfDay.length; index++) {
@@ -31,7 +26,7 @@ var pioneerSquare = {
         );
     }
 }
-cookieResults: [];
+cookieResults = [];
 
 
 
@@ -113,20 +108,13 @@ for (var index = 0; index < cookieLocations.length; index++) {
 document.getElementById("locations").innerHTML = cookieHTML;
 
 
+buildTable();
 
-
-
-
-
-
-
-// buildList();
-
-// function buildList() {
-//     locationHTML = "<li>Min / Customer</li><li>Max / Customer</li><li>Avg. / Customer</li></tr>";
-//     for (var index = 0; index < purchase.length; index++) {
-//         var currentStudent = purchase[index];
-//         locationHTML += "<tr><td>" + currentCookie.minCookie + "</td><td>" + currentCookie.maxCookie + "</td><td>" + currentStudent.avgCookie + "</td><tr>";
-//     }
-//     document.getElementById("cookieLocations").innerHTML = "locationHTML";
-// }
+function buildTable() {
+pioneerHTML = "<tr><th>Pioneer Square Mall</th></tr>";
+for (index = 0; index < timeOfDay.length; index++) {
+    cookieResults = timeOfDay[index];
+    pioneerHTML += "<tr><td>"+cookieResults+"</tr></td>";
+    }
+document.getElementById("pioneer").innerHTML = pioneerHTML;
+}
