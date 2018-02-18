@@ -1,6 +1,6 @@
 // tod array for listing, times unnecessary
 var timeOfDay = ["10 AM: ", "11 AM: ", "12 PM: ", "1 PM: ", "2 PM: ", "3PM: ", "4 PM: ", "5 PM: ", "6 PM: "];
-document.getElementById("times").innerHTML = timeOfDay;
+
 
 cookieResults = [];
 var pioneerSquare = {
@@ -9,14 +9,14 @@ var pioneerSquare = {
     maxCustomer: 88,
     avgCookie: 5.2,
     cookieResults: [],
-    getRandomInt() {
+    getRandomInt: function() {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
     },
     getCookiesPerHour: function () {
-        for (var index = 0; index < timeOfDay.length; index++)
-        this.cookieResults.push(
-        Math.floor(this.getRandomInt() * this.avgCookie)
-        );
+        for (var index = 0; index < timeOfDay.length; index++) {
+            return Math.floor(this.getRandomInt() * this.avgCookie);
+        }
+        this.cookieResults.push();
     }
 }
 
@@ -26,14 +26,14 @@ var portlandAirport = {
     minCustomer: 6,
     maxCustomer: 24,
     avgCookie: 1.2,
-    getRandomInt() {
+    getRandomInt: function() {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
     },
     getCookiesPerHour: function () {
-        for (var index = 0; index < timeOfDay.length; index++)
-        cookieResults.push(
-        Math.floor(this.getRandomInt() * this.avgCookie)
-        );
+        for (var index = 0; index < timeOfDay.length; index++) {
+            return Math.floor(this.getRandomInt() * this.avgCookie);
+        }
+        this.cookieResults.push();
     }
 }
 
@@ -42,14 +42,14 @@ var washingtonSquare = {
     minCustomer: 11,
     maxCustomer: 38,
     avg: 1.9,
-    getRandomInt() {
+    getRandomInt: function() {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
     },
     getCookiesPerHour: function () {
-        for (var index = 0; index < timeOfDay.length; index++)
-        cookieResults.push(
-        Math.floor(this.getRandomInt() * this.avgCookie)
-        );
+        for (var index = 0; index < timeOfDay.length; index++) {
+            return Math.floor(this.getRandomInt() * this.avgCookie);
+        }
+        this.cookieResults.push();
     }
 }
 
@@ -58,14 +58,14 @@ var sellwood = {
     minCustomer: 20,
     maxCustomer: 48,
     avgCookie: 3.3,
-    getRandomInt() {
+    getRandomInt: function() {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
     },
     getCookiesPerHour: function () {
-        for (var index = 0; index < timeOfDay.length; index++)
-        this.cookieResults.push(
-        Math.floor(this.getRandomInt() * this.avgCookie)
-        );
+        for (var index = 0; index < timeOfDay.length; index++) {
+            return Math.floor(this.getRandomInt() * this.avgCookie);
+        }
+        this.cookieResults.push();
     }
 }
 
@@ -102,14 +102,13 @@ cookieLocations.push(pearlDistrict);
 // document.getElementById("locations").innerHTML = cookieHTML;
 
 
-function buildTable() {
 locationHTML = "<tr><th>"+cookieLocations[index]+"</th></tr>";
-for (index = 0; index < timeOfDay.length; index++) {
+for (var index = 0; index < timeOfDay.length; index++) {
     var currentLocation = cookieLocations[index];
-    locationHTML += "<tr><td>"+timeOfDay[index]+"</tr></td><tr><td>"+currentLocation.pioneerSquare+"</tr></td>";
+    locationHTML += "<tr><td>"+timeOfDay[index]+"</tr></td><tr><td>"+cookieLocations.pioneerSquare+"</tr></td>";
     }
-document.getElementById("pioneer").innerHTML = "locationHTML";
-}
+document.getElementById("pioneerSquare").innerHTML = locationHTML;
+
 
 // pdxHTML = "<tr><th>Portland Airport (PDX)</th></tr>";
 // for (index = 0; index < timeOfDay.length; index++) {
