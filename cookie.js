@@ -1,10 +1,11 @@
-// tod array for listing, times unnecessary
-var timeOfDay = ["10 AM: ", "11 AM: ", "12 PM: ", "1 PM: ", "2 PM: ", "3PM: ", "4 PM: ", "5 PM: ", "6 PM: "];
-
+var timeOfDay = ["10 AM: ", "11 AM: ", "12 PM: ", "1 PM: ", "2 PM: ", "3 PM: ", "4 PM: ", "5 PM: ", "6 PM: "];
+var getCookiesPerHour = function(minCustomer, maxCustomer, avgCookie) {
+    return Math.floor(((Math.random() * (maxCustomer - minCustomer + 1)) + minCustomer) * avgCookie);
+}
 
 cookieResults = [];
 var pioneerSquare = {
-    location: "Pioneer Square",
+    name: "Pioneer Square",
     minCustomer: 17,
     maxCustomer: 88,
     avgCookie: 5.2,
@@ -16,13 +17,12 @@ var pioneerSquare = {
         for (var index = 0; index < timeOfDay.length; index++) {
             return Math.floor(this.getRandomInt() * this.avgCookie);
         }
-        this.cookieResults.push();
     }
 }
 
 
 var portlandAirport = {
-    location: "Portland Airport (PDX)",
+    name: "Portland Airport (PDX)",
     minCustomer: 6,
     maxCustomer: 24,
     avgCookie: 1.2,
@@ -33,15 +33,14 @@ var portlandAirport = {
         for (var index = 0; index < timeOfDay.length; index++) {
             return Math.floor(this.getRandomInt() * this.avgCookie);
         }
-        this.cookieResults.push();
     }
 }
 
 var washingtonSquare = {
-    location: "Washington Square Mall",
+    name: "Washington Square Mall",
     minCustomer: 11,
     maxCustomer: 38,
-    avg: 1.9,
+    avgCookie: 1.9,
     getRandomInt: function() {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
     },
@@ -49,12 +48,11 @@ var washingtonSquare = {
         for (var index = 0; index < timeOfDay.length; index++) {
             return Math.floor(this.getRandomInt() * this.avgCookie);
         }
-        this.cookieResults.push();
     }
 }
 
 var sellwood = {
-    location: "SE Sellwood",
+    name: "SE Sellwood",
     minCustomer: 20,
     maxCustomer: 48,
     avgCookie: 3.3,
@@ -65,12 +63,11 @@ var sellwood = {
         for (var index = 0; index < timeOfDay.length; index++) {
             return Math.floor(this.getRandomInt() * this.avgCookie);
         }
-        this.cookieResults.push();
     }
 }
 
 var pearlDistrict = {
-    location: "Historic Pearl District",
+    name: "Historic Pearl District",
     minCustomer: 3,
     maxCustomer: 24,
     avgCookie: 2.6,
@@ -82,36 +79,17 @@ var pearlDistrict = {
         for (var index = 0; index < timeOfDay.length; index++) {
             return Math.floor(this.getRandomInt() * this.avgCookie);
         }
-        this.cookieResults.push();
     }
 }
 
-// cookie shop locations in an array to get pushed
-var cookieLocations = [];
-cookieLocations.push(pioneerSquare);
-cookieLocations.push(portlandAirport);
-cookieLocations.push(washingtonSquare);
-cookieLocations.push(sellwood);
-cookieLocations.push(pearlDistrict);
 
-// cookieHTML = "<tr><th>Minimum Customer / Hour</th><th>Maximum Customer / Hour</th><th>Average Cookies / Customer</th>";
-// for (var index = 0; index < cookieLocations.length; index++) {
-//     var currentLocation = cookieLocations[index];
-//     cookieHTML += "<tr><td>" + currentLocation.minCustomer + "</td><td>" + currentLocation.maxCustomer + "</td><td>" + currentLocation.avgCookie + "</td></tr>";
-// }
-// document.getElementById("locations").innerHTML = cookieHTML;
+var cookieLocations = [pioneerSquare, portlandAirport, washingtonSquare, sellwood, pearlDistrict];
+var locationHTML = "";
+for (var cookieIndex = 0; cookieIndex < cookieLocations.length; cookieIndex++) {
+    locationHTML += "<tr><th>"+cookieLocations[cookieIndex].name+"</th></tr>";
+    for (var index = 0; index < timeOfDay.length; index++) {
+        locationHTML += "<tr><td>"+timeOfDay[index]+"</tr></td><tr><td>"+cookieLocations[cookieIndex].getCookiesPerHour()+"</tr></td>";
+        }
+}
 
-
-locationHTML = "<tr><th>"+cookieLocations[index]+"</th></tr>";
-for (var index = 0; index < timeOfDay.length; index++) {
-    var currentLocation = cookieLocations[index];
-    locationHTML += "<tr><td>"+timeOfDay[index]+"</tr></td><tr><td>"+cookieLocations.pioneerSquare+"</tr></td>";
-    }
-document.getElementById("pioneerSquare").innerHTML = locationHTML;
-
-
-// pdxHTML = "<tr><th>Portland Airport (PDX)</th></tr>";
-// for (index = 0; index < timeOfDay.length; index++) {
-//     pdxHTML += "<tr><td>"+timeOfDay[index]+"</tr></td>";
-//     }
-// document.getElementById("pdx").innerHTML = pdxHTML;
+document.getElementById("location").innerHTML = locationHTML;
