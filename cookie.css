@@ -1,6 +1,13 @@
 table {
     margin: 0 auto;
     border: dotted #9881F5;
+    background-color: #F9D08B;
+    opacity: 0.95;
+}
+
+th {
+    color: #29264E;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
 }
 
 tr {
@@ -10,6 +17,8 @@ tr {
 td {
     padding: 4px 8px;
     border-bottom: 1 px solid black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #29264E;
 }
 
 data {
