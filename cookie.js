@@ -16,12 +16,6 @@ var pioneerSquare = {
         for (var index = 0; index < timeOfDay.length; index++) {
             return Math.floor(this.getRandomInt() * this.avgCookie);
         }
-    },
-    calculateTotal: function() {
-        var total = 0;
-        for (var index = 0; index < cookieLocations.length; index++) {
-            total = timeOfDay.total + parseInt(cookieLocations[index].getCookiesPerHour())
-        }
     }
 }
 
@@ -93,13 +87,13 @@ var cookieLocations = [pioneerSquare, portlandAirport, washingtonSquare, sellwoo
 
 var locationHTML = "";
 for (var cookieIndex = 0; cookieIndex < cookieLocations.length; cookieIndex++) {
-    locationHTML += "<tr><th>"+cookieLocations[cookieIndex].name+"</th></tr>";
+    locationHTML += "<ul><h3>"+cookieLocations[cookieIndex].name+"</h4>";
     var cookieTotal = 0;
     for (var index = 0; index < timeOfDay.length; index++) {
-        locationHTML += "<tr><td>"+timeOfDay[index]+"</tr></td><tr><td>"+cookieLocations[cookieIndex].getCookiesPerHour()+"</tr></td>";
+        locationHTML += "<li>"+timeOfDay[index] + cookieLocations[cookieIndex].getCookiesPerHour()+"</li>";
         cookieTotal += cookieLocations[cookieIndex].getCookiesPerHour();
         }
-        locationHTML += "<tr><td>Total: "+cookieTotal+"</tr></td>";
+        locationHTML += "<li>Total: "+cookieTotal+"</li></ul>";
 }
 
 document.getElementById("location").innerHTML = locationHTML;
