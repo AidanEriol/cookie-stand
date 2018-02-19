@@ -1,0 +1,19 @@
+body {
+    padding: 4px;
+    margin: 2px;
+    background-color: salmon;
+}
+
+#header {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, serif;
+    color: #F9D08B;
+    text-shadow: #9881F5 2px;
+    text-align: right;
+}
+
+p {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    color: #29264E;
+    width: 60%;
+    display: inline-block;
+}
