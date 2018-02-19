@@ -2,18 +2,21 @@ body {
     padding: 4px;
     margin: 2px;
     background-color: salmon;
+    align-content: center;
 }
 
-#header {
+h1, h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, serif;
+    font-weight: bold;
     color: #F9D08B;
     text-shadow: #9881F5 2px;
-    text-align: right;
 }
 
 p {
-    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-family: 'Raleway', sans-serif;
     color: #29264E;
     width: 60%;
     display: inline-block;
+    border: dotted #9881F5;
+    background-color: #F9D08B;
 }
