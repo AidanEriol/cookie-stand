@@ -1,29 +1,32 @@
-table {
-    margin: 0 auto;
+
+
+#location {
+    margin: 10px;
     border: dotted #9881F5;
     background-color: #F9D08B;
     opacity: 0.95;
+    display: inline-block;
+    color:#29264E;
 }
 
-th {
+h3 {
     color: #29264E;
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    text-align: left;
+    padding: 4px;
 }
 
-tr {
-    border: 1 px solid black;
-}
 
-td {
+li {
     padding: 4px 8px;
     border-bottom: 1 px solid black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #29264E;
+    text-decoration-style: wavy;
 }
 
-data {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #29264E;
+tr {
+    border: dotted #9881F5;
 }
 
 a {
@@ -31,11 +34,14 @@ a {
     text-decoration: none;
 }
 
-p {
-    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-    color: #29264E;
+a:hover {
+    background-color: #29264E;
 }
 
-body{
+
+
+body {
     background-color: salmon;
 }
+
+/* color palette reference: https://www.colorcombos.com/color-schemes/6210/ColorCombo6210.html */
