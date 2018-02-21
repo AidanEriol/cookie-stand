@@ -87,7 +87,7 @@ var cookieLocations = [pioneerSquare, portlandAirport, washingtonSquare, sellwoo
 
 var locationHTML = "";
 for (var cookieIndex = 0; cookieIndex < cookieLocations.length; cookieIndex++) {
-    locationHTML += "<ul><h3>"+cookieLocations[cookieIndex].name+"</h4>";
+    locationHTML += "<ul><h3>"+cookieLocations[cookieIndex].name+"</h3>";
     var cookieTotal = 0;
     for (var index = 0; index < timeOfDay.length; index++) {
         locationHTML += "<li>"+timeOfDay[index] + cookieLocations[cookieIndex].getCookiesPerHour()+"</li>";
