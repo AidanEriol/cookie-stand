@@ -6,9 +6,9 @@ var getCookiesPerHour = function(minCustomer, maxCustomer, avgCookie) {
 
 var Location = function(name, minCustomer, maxCustomer, avgCookie) {
     this.name = name;
-    this.minCustomer = 0;
-    this.maxCustomer = 0;
-    this.avgCookie = 0;
+    this.minCustomer = minCustomer;
+    this.maxCustomer = maxCustomer;
+    this.avgCookie = avgCookie;
     this.getRandomInt = function() {
         return Math.floor(Math.random() * Math.floor(this.maxCustomer - this.minCustomer) + this.minCustomer);
     },
@@ -20,14 +20,12 @@ var Location = function(name, minCustomer, maxCustomer, avgCookie) {
 }
 
 var cookieLocations = [];
-cookieLocations.push(new Location("Pioneer Square", 5, 88, 5.2));
+cookieLocations.push(new Location("Pioneer Square", 17, 88, 5.2));
 cookieLocations.push(new Location("Portland Airport (PDX)", 6, 24, 1.2));
-cookieLocations.push(new Location("Washington Square Mall", 11, 38, 1.9))
+cookieLocations.push(new Location("Washington Square Mall", 11, 38, 1.9));
+cookieLocations.push(new Location("SE Sellwood", 20, 48, 3.3));
+cookieLocations.push(new Location("Historic Pearl District", 3, 24, 2.6));
 
-
-var portlandAirport = new Location("Portland Airport (PDX)", 6, 24, 1.2);
-cookieLocations.push(portlandAirport);
-portlandAirport.getCookiesPerHour();
 //     name: "Portland Airport (PDX)",
 //     minCustomer: 6,
 //     maxCustomer: 24,
@@ -93,7 +91,7 @@ portlandAirport.getCookiesPerHour();
 
 
 
-var locationHTML = "";
+// var locationHTML = "";
 // for (var cookieIndex = 0; cookieIndex < cookieLocations.length; cookieIndex++) {
 //     locationHTML += "<ul><h3>"+cookieLocations[cookieIndex].name+"</h3>";
 //     var cookieTotal = 0;
@@ -106,29 +104,30 @@ var locationHTML = "";
 
 
 
-function makeTable() {
+function makeTable() {        
+    var table = document.getElementById("location").firstElementChild;
     for (var cookieIndex = 0; cookieIndex < cookieLocations.length; cookieIndex++) {
-        var table = document.getElementById("location");
         table.innerHTML += "<tr><th>"+cookieLocations[cookieIndex].name+"</tr></th>";
         var cookieTotal = 0;
         for (var index = 0; index < timeOfDay.length; index++) {
-            table += "<tr><td>"+timeOfDay[index]+"</td><td>"+cookieLocations[cookieIndex].getCookiesPerHour()+"</td></tr>";
-            cookieTotal += cookieLocations[cookieIndex].getCookiesPerHour();
+            var cookieResults = cookieLocations[cookieIndex].getCookiesPerHour();
+            table.innerHTML += "<tr><td>"+timeOfDay[index]+"</td><td>"+cookieResults+"</td></tr>";
+            cookieTotal += cookieResults;
             }
-            table += "<tr><td>Total: "+cookieTotal+"</td></tr>";
+            table.innerHTML += "<tr><td>Total: "+cookieTotal+"</td></tr>";
     }
 
-row = document.getElementById("tr");
-cell = document.getElementById("th");
-cell.innerText = cookieLocations[cookieIndex].name;
-row.appendChild(cell);
-cell = document.getElementById("tr");
-cell.innerText = timeOfDay[index];
-row.appendChild(cell);
-cell = document.getElementById("tr");
-cell.innerText = cookieLocations[cookieIndex].getCookiesPerHour();
-row.appendChild(cell);
-table.appendChild(row);
+// row = document.getElementById("tr");
+// cell = document.getElementById("th");
+// cell.innerText = cookieLocations[cookieIndex].name;
+// row.appendChild(cell);
+// cell = document.getElementById("tr");
+// cell.innerText = timeOfDay[index];
+// row.appendChild(cell);
+// cell = document.getElementById("tr");
+// cell.innerText = cookieLocations[cookieIndex].getCookiesPerHour();
+// row.appendChild(cell);
+// table.appendChild(row);
 }
 makeTable();
 // document.getElementById("location").innerHTML = locationHTML;
