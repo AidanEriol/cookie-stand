@@ -39,4 +39,46 @@ function makeTable() {
     }
 }
 
+function addCookieLocation() {
+
+}
+
+function showAddStore() {
+    var addStore = document.getElementById("add-store");
+    if (addStore.style.display === "block") {
+        addStore.style.display = "none";
+    } else {
+        addStore.style.display = "block";
+    }
+}
+
+function isValidEntry(inputField) {
+    if (inputField.value == "") {
+        // if input is empty,
+       inputField.setAttribute("class", "required");
+    } else {
+        inputField.setAttribute("class", "");
+        // makes it so that it changes back to clear when a value is set
+    }
+}
+
+function validateForm(form) {
+    var formIsValid = true;
+    for (var index = 0; index < form.elements.length; index++) {
+        if (form.elements(index).value == "") {
+            formIsValid = false;
+            console.log(form.elements(index).name + " has no value.")
+        }
+    }
+    if (!formIsValid) {
+        alert("All fields are required");
+        return false;
+        // won't let the form be submitted
+    }
+    return true;
+}
+
+
+
+
 makeTable();
