@@ -25,6 +25,7 @@ cookieLocations.push(new Location("Washington Square Mall", 11, 38, 1.9));
 cookieLocations.push(new Location("SE Sellwood", 20, 48, 3.3));
 cookieLocations.push(new Location("Historic Pearl District", 3, 24, 2.6));
 
+
 function makeTable() {        
     var table = document.getElementById("location").firstElementChild;
     for (var cookieIndex = 0; cookieIndex < cookieLocations.length; cookieIndex++) {
@@ -40,8 +41,15 @@ function makeTable() {
 }
 
 function addCookieLocation() {
-
+    var name = form.name.value;
+    var minCustomer = form.minCustomer.value;
+    var maxCustomer = form.maxCustomer.value;
+    var avgCookie = form.avgCookie.value;
+    cookieLocations.push(new Location(name, minCustomer, maxCustomer, avgCookie));
+    makeTable();
 }
+
+makeTable();
 
 function showAddStore() {
     var addStore = document.getElementById("add-store");
@@ -61,24 +69,5 @@ function isValidEntry(inputField) {
         // makes it so that it changes back to clear when a value is set
     }
 }
-
-function validateForm(form) {
-    var formIsValid = true;
-    for (var index = 0; index < form.elements.length; index++) {
-        if (form.elements(index).value == "") {
-            formIsValid = false;
-            console.log(form.elements(index).name + " has no value.")
-        }
-    }
-    if (!formIsValid) {
-        alert("All fields are required");
-        return false;
-        // won't let the form be submitted
-    }
-    return true;
-}
-
-
-
 
 makeTable();
