@@ -2,7 +2,7 @@
 
 var timeOfDay = ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM"];
 
-var table = document.getElementById("location");
+var table = document.getElementById("location").firstElementChild;
 
 var getCookiesPerHour = function(minCustomer, maxCustomer, avgCookie) {
     return Math.floor(((Math.random() * (maxCustomer - minCustomer + 1)) + minCustomer) * avgCookie);
@@ -49,6 +49,7 @@ function makeHourHeader() {
 }
 
 function makeTable() { 
+    table.textContent = "";
     makeHourHeader();
     for (var cookieIndex = 0; cookieIndex < cookieLocations.length; cookieIndex++) {
         var store = cookieLocations[cookieIndex]
@@ -72,7 +73,25 @@ function makeTable() {
     }
 }
 
+function addCookieLocation() {
+    var name = form.name.value;
+    var minCustomer = form.minCustomer.value;
+    var maxCustomer = form.maxCustomer.value;
+    var avgCookie = form.avgCookie.value;
+    cookieLocations.push(new Location(name, minCustomer, maxCustomer, avgCookie));
+    makeTable();
+}
+
 makeTable();
+
+function showAddStore() {
+    var addStore = document.getElementById("add-store");
+    if (addStore.style.display === "block") {
+        addStore.style.display = "none";
+    } else {
+        addStore.style.display = "block";
+    }
+}
 
 function isValidEntry(inputField) {
     if (inputField.value == "") {

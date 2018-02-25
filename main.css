@@ -24,10 +24,6 @@ h4 {
     padding: 4px;
 }
 
-th {
-    border-top: dotted #9881F5;
-}
-
 a {
     color: #82AFF9;
     text-decoration: none;
@@ -43,6 +39,15 @@ p {
     font-size: 15px;
 }
 
+#store-container, nav, aside {
+    vertical-align: top;
+    display: inline-block;
+}
+
+th {
+    border: #29264E solid 1px;
+}
+  
 #location {
     border: dotted 5px #9881F5;
     border-collapse: collapse;
@@ -64,9 +69,10 @@ p {
 th, td {
     text-align: left;
     padding: 8px;
-    border: #29264E solid 1px;
+    font-family: 'Mukta Malar', sans-serif;
 }
-    
+
+  
 tr:nth-child(even) {
     background-color: #f2f2f2
         /* width: calc(100% - 500px - 5px - 1em); */
@@ -103,7 +109,7 @@ nav {
     margin: auto;
     color:#29264E;
     display: none;
-    width: 300px;;
+    width: 300px;
 }
 
 #add-button {
