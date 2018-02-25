@@ -72,24 +72,7 @@ function makeTable() {
     }
 }
 
-function addCookieLocation() {
-    var name = form.name.value;
-    var minCustomer = form.minCustomer.value;
-    var maxCustomer = form.maxCustomer.value;
-    var avgCookie = form.avgCookie.value;
-    cookieLocations.push(new Location(name, minCustomer, maxCustomer, avgCookie));
-    makeTable();
-}
 makeTable();
-
-function showAddStore() {
-    var addStore = document.getElementById("add-store");
-    if (addStore.style.display === "block") {
-        addStore.style.display = "none";
-    } else {
-        addStore.style.display = "block";
-    }
-}
 
 function isValidEntry(inputField) {
     if (inputField.value == "") {
