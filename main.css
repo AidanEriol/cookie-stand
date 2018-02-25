@@ -37,22 +37,100 @@ a:hover {
     background-color: #29264E;
 }
 
+p {
+    color: rgb(59, 112, 197);
+    font-family: 'Mukta Malar', sans-serif;
+    font-size: 15px;
+}
+
 #location {
+    border: dotted 5px #9881F5;
+    border-collapse: collapse;
+    display: inline-block;
+    text-align: center;
+    padding: 4px;
+    background-color: #F9D08B;
+    margin: auto;
+    color:#29264E;
+    /* width: 100%; */
+}
+
+#store-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: #29264E solid 1px;
+}
+    
+tr:nth-child(even) {
+    background-color: #f2f2f2
+        /* width: calc(100% - 500px - 5px - 1em); */
+}
+
+nav {
+    border: dotted 5px #9881F5;
+    width: 300px;
+    text-align: center;
+    padding: 4px;
+    background-color: #F9D08B;
+}
+
+
+#family {
+    text-align: left;
+    width: 100%;
+}
+
+#logo {
+    width: 40%;
+    text-align: center;
+}
+
+.required {
+    background-color: #82AFF9;
+}
+
+#add-store {
     border: dotted 5px #9881F5;
     text-align: center;
     padding: 4px;
     background-color: #F9D08B;
     margin: auto;
     color:#29264E;
+    display: none;
+    width: 300px;;
 }
 
-#family {
-    text-align: left;
-}
-
-#logo {
-    width: 40%;
+#add-button {
     text-align: center;
+    padding-bottom: 10px;
+}
+
+form {
+    width: 300px;
+    margin: 5px auto;
+    text-align: center;
+}
+
+label, input {
+    width: 150px;
+    text-align: center;
+}
+
+input {
+    text-align: center;
+}
+
+label {
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding: 0 5px;
 }
 
 /* color palette reference: https://www.colorcombos.com/color-schemes/6210/ColorCombo6210.html */

@@ -4,25 +4,6 @@ var timeOfDay = ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 P
 
 var table = document.getElementById("location");
 
-function makeHourHeader() {
-    var rowTime = document.createElement("tr");
-    table.appendChild(rowTime);
-    var cellLocation = document.createElement("td");
-    cellLocation.textContent = "";
-    rowTime.appendChild(cellLocation);
-    var cellTotal = document.createElement("td");
-
-
-    for (var timeIndex = 0; timeIndex < timeOfDay.length; timeIndex++) {
-        var cell = document.createElement("td");
-        cell.textContent = timeOfDay[timeIndex];
-        rowTime.appendChild(cell);
-        }
-    cellTotal.textContent = "Total";
-    rowTime.appendChild(cellTotal);
-}
-
-
 var getCookiesPerHour = function(minCustomer, maxCustomer, avgCookie) {
     return Math.floor(((Math.random() * (maxCustomer - minCustomer + 1)) + minCustomer) * avgCookie);
 }
@@ -49,36 +30,47 @@ cookieLocations.push(new Location("Washington Square Mall", 11, 38, 1.9));
 cookieLocations.push(new Location("SE Sellwood", 20, 48, 3.3));
 cookieLocations.push(new Location("Historic Pearl District", 3, 24, 2.6));
 
+function makeHourHeader() {
+    var rowTime = document.createElement("tr");
+    table.appendChild(rowTime);
+    var cellLocation = document.createElement("td");
+    cellLocation.textContent = "";
+    rowTime.appendChild(cellLocation);
+    var cellTotal = document.createElement("td");
+
+
+    for (var timeIndex = 0; timeIndex < timeOfDay.length; timeIndex++) {
+        var cell = document.createElement("td");
+        cell.textContent = timeOfDay[timeIndex];
+        rowTime.appendChild(cell);
+        }
+    cellTotal.textContent = "Total";
+    rowTime.appendChild(cellTotal);
+}
 
 function makeTable() { 
     makeHourHeader();
-    
-    var storeRow = document.createElement("tr");
-    var cell = document.createElement("td");
-    cell.textContent = store.name;
-    storeRow.appendChild(cell);
-    table.appendChild(storeRow);
-
-    var cookieTotal = 0;
-    for (var cookieIndex = 0; cookieIndex < cookieLocations.length; cookieIndex) {
+    for (var cookieIndex = 0; cookieIndex < cookieLocations.length; cookieIndex++) {
+        var store = cookieLocations[cookieIndex]
+        var storeRow = document.createElement("tr");
         var cell = document.createElement("td");
-        var cookieResults = store.getCookiesPerHour();
+        cell.textContent = store.name;
+        storeRow.appendChild(cell);
+        table.appendChild(storeRow);
+
+        var cookieTotal = 0;
+        for (var index = 0; index < timeOfDay.length; index++) {
+            var cell = document.createElement("td");
+            var cookieResults = store.getCookiesPerHour();
+            cell.textContent = cookieResults;
+            storeRow.appendChild(cell);
+            cookieTotal += cookieResults;
+        }
+        var cellTotal = document.createElement("td");
+        cellTotal.textContent = cookieTotal;
+        storeRow.appendChild(cellTotal);
     }
-
-
-
-   
-//     for (var cookieIndex = 0; cookieIndex < cookieLocations.length; cookieIndex++) {
-//         table.innerHTML += "<th>"+cookieLocations[cookieIndex].name+"</th>";
-//         var cookieTotal = 0;
-//         for (var index = 0; index < timeOfDay.length; index++) {
-//             var cookieResults = cookieLocations[cookieIndex].getCookiesPerHour();
-//             table.innerHTML += "<th>"+timeOfDay[index]+"</th><tr><td>"+cookieResults+"</td></tr>";
-//             cookieTotal += cookieResults;
-//             }
-//             table.innerHTML += "<tr><td>Total: "+cookieTotal+"</td></tr>";
-//     }
-// }
+}
 
 function addCookieLocation() {
     var name = form.name.value;
@@ -88,8 +80,7 @@ function addCookieLocation() {
     cookieLocations.push(new Location(name, minCustomer, maxCustomer, avgCookie));
     makeTable();
 }
-
-// makeTable();
+makeTable();
 
 function showAddStore() {
     var addStore = document.getElementById("add-store");

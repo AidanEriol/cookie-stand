@@ -9,19 +9,33 @@
             <h4> <img id="logo" src="salmon.png" title="the logo in process" alt="The salmon logo"><br>It sounds weird, but try it!</h4>
             <h2>Cookie Estimates by Location!</h2><br><br>
         </header>
-        <table id="location">
-            <tbody></tbody>
-        </table>
-        <input type="button" onclick="showAddStore()" value="Add Store?"></input>
+        <main>
+            <nav>
+                <h3>Products!</h3>
+                <p>We've got cookies! We've got shirts! We've got Rent-a-Familys! Whatever your flavor, we can sate.<br>
+                <img id="family" src="family.jpg" title="A fine example of our Rent-a-Family" alt="A happy family you can rent!">
+                </p>
+            </nav>
+        <div id="store-container" style="overflow-x:auto;">
+            <table id="location">
+                <tbody></tbody>
+            </table>
+        </div>
+        <br>
+        <div id="add-button">
+            <input type="button" onclick="showAddStore()" value="Add Store?"></input>
+        </div>
         <div id="add-store">
-            <form onsubmit="return validateForm(this)">
-                <label>Store Name: <input type="text" name="name" onblur="isValidEntry(this)"></label>
-                <label>Minimum Customer/Hour: <input type="number" name="minCustomer" onblur="isValidEntry(this)"></label>
-                <label>Maximum Customer/Hour: <input type="number" name="maxCustomer" onblur="isValidEntry(this)"></label>
-                <label>Average Cookies/Hour: <input type="number" name="avgCookie" onblur="isValidEntry(this)"></label>
-                <input type="submit" onclick="makeTable()" value="Submit">
+            <form id="form">
+                <label>Store Name: <br><input type="text" name="name" onblur="isValidEntry(this)"></label>
+                <label>Minimum Customer/Hour: <input type="text" name="minCustomer" onblur="isValidEntry(this)"></label>
+                <label>Maximum Customer/Hour: <input type="text" name="maxCustomer" onblur="isValidEntry(this)"></label>
+                <label>Average Cookies/Hour: <input type="text" name="avgCookie" onblur="isValidEntry(this)"></label>
+                <br>
+                <input type="button" onclick="addCookieLocation(this.form)" value="Submit">
             </form>
         </div>
+        </main>
     <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
