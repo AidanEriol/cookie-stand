@@ -8,3 +8,4 @@ adding referenced links<br><br>
 **https://gist.github.com/kerimdzhanov/7529623**<br>
 **https://stackoverflow.com/questions/20826094/javascript-objects-assign-function-to-property**<br>
 **https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range**<br>
+**https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_table_responsive<br>
