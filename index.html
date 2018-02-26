@@ -7,15 +7,15 @@
         <header>
             <h1>Portland Pat's Famous Salmon Cookies</h1>
             <h4> <img id="logo" src="salmon.png" title="the logo in process" alt="The salmon logo"><br>It sounds weird, but try it!</h4>
-            <h2>Cookie Estimates by Location!</h2><br><br>
+            <h2>Cookie Estimates by Location!</h2>
         </header>
         <main>
-            <nav>
+            <nav style="overflow-y: auto;">
                 <h3>Products!</h3>
                 <p>We've got cookies! We've got shirts! We've got Rent-a-Familys! Whatever your flavor, we can sate.<br>                
                 <img id="shirt" src="shirt.jpg" title="100% salmon silk" alt="A soft shirt with a salmon on it">
                 <img id="family" src="family.jpg" title="A fine example of our Rent-a-Family" alt="A happy family you can rent!">
-
+                <br> Ask us about hourly rates on families!
                 </p>
             </nav>
         <div id="store-container" style="overflow-x:auto;">
@@ -26,19 +26,22 @@
         <br>
         <div id="add-button">
             <input type="button" onclick="showAddStore()" value="Add Store?"></input>
-        </div>
+        
     </div>
         <div id="add-store">
             <form id="form">
+                <fieldset>
                 <label>Store Name: <br><input type="text" name="name" onblur="isValidEntry(this)"></label>
                 <label>Minimum Customer/Hour: <input type="text" name="minCustomer" onblur="isValidEntry(this)"></label>
                 <label>Maximum Customer/Hour: <input type="text" name="maxCustomer" onblur="isValidEntry(this)"></label>
                 <label>Average Cookies/Hour: <input type="text" name="avgCookie" onblur="isValidEntry(this)"></label>
                 <br>
                 <input type="button" onclick="addCookieLocation(this.form)" value="Submit">
+                </fieldset>
             </form>
         </div>
-        <aside>
+    </div>
+        <section>
             <h2>Great fun for the whole family!</h2>
             <p>Check out what our locations have to offer!
                 <ul>
@@ -48,10 +51,15 @@
                     <li><a href="https://www.sunset.com/travel/northwest/day-trip-portland-sellwood-neighborhood">SE Sellwood</a></li>
                     <li><a href="http://explorethepearl.com/placecategory/markets-speciality/">Pearl District</a></li>
                 </ul>
+                <img id="school" src="fishies.jpg" title="we're here for fun" alt="cute colorful fish">
             </p>
-        </aside>
+        </section>
         </main>
-        
+        <footer>
+            <p>
+                Portland Pat's Salmon Cookies&copy;
+            </p>
+        </footer>
     <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

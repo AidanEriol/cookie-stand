@@ -40,11 +40,14 @@ p {
     font-weight: bold;
 }
 
-#store-container, nav, aside {
+#store-container, nav, section {
+    margin: 25px;
     vertical-align: top;
     display: inline-block;
-
+    height: 500px;
+    text-align: center;
 }
+
 
 th {
     border: #29264E solid 1px;
@@ -55,17 +58,13 @@ th {
     border-collapse: collapse;
     display: inline-block;
     text-align: center;
-    padding: 4px;
     background-color: #F9D08B;
     margin: auto;
     color:#29264E;
-    /* width: 100%; */
 }
 
 #store-container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 300px;
+    width: 40%;
 }
 
 th, td {
@@ -77,12 +76,11 @@ th, td {
   
 tr:nth-child(even) {
     background-color: #f2f2f2
-        /* width: calc(100% - 500px - 5px - 1em); */
 }
 
-nav, aside {
+nav, section {
     border: dotted 5px #9881F5;
-    width: 300px;
+    width: 20%;
     text-align: center;
     padding: 4px;
     background-color: #F9D08B;
@@ -90,10 +88,13 @@ nav, aside {
 
 li {
     list-style-type: none;
-    margin: 0 auto;
+    margin-right: 25%;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color: #29264E;
 }
 
-#family, #shirt {
+#family, #shirt, #school {
     text-align: left;
     width: 100%;
 }
@@ -143,6 +144,11 @@ label {
     width: 100%;
     display: block;
     padding: 0 5px;
+}
+
+footer {
+    text-align: center;
+
 }
 
 /* color palette reference: https://www.colorcombos.com/color-schemes/6210/ColorCombo6210.html */
