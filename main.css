@@ -10,7 +10,7 @@ header {
     text-align: center; 
 }
 
-h3 {
+h2, h3 {
     color: #29264E;
     font-family: Cambria, Cochin, Georgia, serif;
     text-align: center;
@@ -25,23 +25,25 @@ h4 {
 }
 
 a {
-    color: #82AFF9;
+    color: #29264E;
     text-decoration: none;
 }
 
 a:hover {
-    background-color: #29264E;
+    background-color: #82AFF9;
 }
 
 p {
     color: rgb(59, 112, 197);
     font-family: 'Mukta Malar', sans-serif;
-    font-size: 15px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 #store-container, nav, aside {
     vertical-align: top;
     display: inline-block;
+
 }
 
 th {
@@ -78,7 +80,7 @@ tr:nth-child(even) {
         /* width: calc(100% - 500px - 5px - 1em); */
 }
 
-nav {
+nav, aside {
     border: dotted 5px #9881F5;
     width: 300px;
     text-align: center;
@@ -86,8 +88,12 @@ nav {
     background-color: #F9D08B;
 }
 
+li {
+    list-style-type: none;
+    margin: 0 auto;
+}
 
-#family {
+#family, #shirt {
     text-align: left;
     width: 100%;
 }
